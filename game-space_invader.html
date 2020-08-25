@@ -1,0 +1,186 @@
+<div id="screen">
+    <div class="item">
+        <div class="space-invader"></div>
+    </div>
+    <div class="item">
+        <div class="space-invader"></div>
+    </div>
+    <div class="item">
+        <div class="space-invader"></div>
+    </div>
+    <div class="item">
+        <div class="space-invader"></div>
+    </div>
+    <div class="item">
+        <div class="space-invader"></div>
+    </div>
+    <div class="item">
+        <div class="space-invader"></div>
+    </div>
+    <div class="item">
+        <div class="space-invader"></div>
+    </div>
+    <div class="item">
+        <div class="space-invader"></div>
+    </div>
+    <div class="item">
+        <div class="space-invader"></div>
+    </div>
+    <div class="item">
+        <div class="space-invader"></div>
+    </div>
+    <div class="score">Score: <output>0/10</output></div>
+    <div class="time">Time: <output>---</output></div>
+</div>
+
+<style>
+#screen {
+overflow: hidden;
+position: relative;
+width: 100%;
+height: 100vh;
+margin: auto;
+background-color: #000;
+cursor: crosshair;
+}
+.item {
+  position: absolute;
+  top: calc(50% - ( 0.25em * 8 / 2));
+  left: calc(50% - ( 0.25em * 11 / 2));
+  height: 2em;
+  width: 2.75em;
+  transition: all 2s ease-in-out;
+  transition-property: top, left;
+}
+.item * {
+  position: relative;
+  top: 0.75em;
+  left: 1.25em;
+}
+.space-invader {
+  position: absolute;
+  width: 0.25em;
+  height: 0.25em;
+  box-shadow: 0 0 0 0.25em #fff, 0 0.25em 0 0.25em #fff, -0.625em 0.375em 0 0.125em #fff, 0.625em 0.375em 0 0.125em #fff, -0.75em -0.75em 0 0 #fff, 0.75em -0.75em 0 0 #fff, -0.5em -0.5em 0 0 #fff, 0.5em -0.5em 0 0 #fff, -0.75em -0.25em 0 0 #fff, -0.5em -0.25em 0 0 #fff, 0.5em -0.25em 0 0 #fff, 0.75em -0.25em 0 0 #fff, -1em 0 0 0 #fff, -0.75em 0 0 0 #fff, 0.75em 0 0 0 #fff, 1em 0 0 0 #fff, -1em 0.25em 0 0 #fff, 1em 0.25em 0 0 #fff, -0.75em 0.75em 0 0 #fff, 0.75em 0.75em 0 0 #fff, 1.25em 0.25em 0 0 #fff, 1.25em 0.5em 0 0 #fff, 1.25em 0.75em 0 0 #fff, -1.25em 0.25em 0 0 #fff, -1.25em 0.5em 0 0 #fff, -1.25em 0.75em 0 0 #fff, -0.25em 1em 0 0 #fff, -0.5em 1em 0 0 #fff, 0.25em 1em 0 0 #fff, 0.5em 1em 0 0 #fff;
+  animation: animSpaceInvader 1s step-end infinite;
+}
+.score,
+.time {
+  position: absolute;
+  bottom: 0.5rem;
+  padding: 0.5rem;
+  font-family: Arial;
+  color: Orange;
+  background-color: #333;
+}
+.score {
+  right: 0.5rem;
+}
+.time {
+  left: 0.5rem;
+}
+.gameover {
+  color: White;
+  background-color: Red;
+}
+html,
+body {
+  height: 100%;
+}
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  background-color: #333;
+}
+@-moz-keyframes animSpaceInvader {
+  50% {
+    box-shadow: 0 0 0 0.25em #fff, 0 0.25em 0 0.25em #fff, -0.625em 0.375em 0 0.125em #fff, 0.625em 0.375em 0 0.125em #fff, -0.75em -0.75em 0 0 #fff, 0.75em -0.75em 0 0 #fff, -0.5em -0.5em 0 0 #fff, 0.5em -0.5em 0 0 #fff, -0.75em -0.25em 0 0 #fff, -0.5em -0.25em 0 0 #fff, 0.5em -0.25em 0 0 #fff, 0.75em -0.25em 0 0 #fff, -1em 0 0 0 #fff, -0.75em 0 0 0 #fff, 0.75em 0 0 0 #fff, 1em 0 0 0 #fff, -1em 0.25em 0 0 #fff, 1em 0.25em 0 0 #fff, -0.75em 0.75em 0 0 #fff, 0.75em 0.75em 0 0 #fff, 1.25em 0 0 0 #fff, 1.25em -0.25em 0 0 #fff, 1.25em -0.5em 0 0 #fff, -1.25em 0 0 0 #fff, -1.25em -0.25em 0 0 #fff, -1.25em -0.5em 0 0 #fff, -1em 1em 0 0 #fff, -1em 1em 0 0 #fff, 1em 1em 0 0 #fff, 1em 1em 0 0 #fff;
+  }
+}
+@-webkit-keyframes animSpaceInvader {
+  50% {
+    box-shadow: 0 0 0 0.25em #fff, 0 0.25em 0 0.25em #fff, -0.625em 0.375em 0 0.125em #fff, 0.625em 0.375em 0 0.125em #fff, -0.75em -0.75em 0 0 #fff, 0.75em -0.75em 0 0 #fff, -0.5em -0.5em 0 0 #fff, 0.5em -0.5em 0 0 #fff, -0.75em -0.25em 0 0 #fff, -0.5em -0.25em 0 0 #fff, 0.5em -0.25em 0 0 #fff, 0.75em -0.25em 0 0 #fff, -1em 0 0 0 #fff, -0.75em 0 0 0 #fff, 0.75em 0 0 0 #fff, 1em 0 0 0 #fff, -1em 0.25em 0 0 #fff, 1em 0.25em 0 0 #fff, -0.75em 0.75em 0 0 #fff, 0.75em 0.75em 0 0 #fff, 1.25em 0 0 0 #fff, 1.25em -0.25em 0 0 #fff, 1.25em -0.5em 0 0 #fff, -1.25em 0 0 0 #fff, -1.25em -0.25em 0 0 #fff, -1.25em -0.5em 0 0 #fff, -1em 1em 0 0 #fff, -1em 1em 0 0 #fff, 1em 1em 0 0 #fff, 1em 1em 0 0 #fff;
+  }
+}
+@-o-keyframes animSpaceInvader {
+  50% {
+    box-shadow: 0 0 0 0.25em #fff, 0 0.25em 0 0.25em #fff, -0.625em 0.375em 0 0.125em #fff, 0.625em 0.375em 0 0.125em #fff, -0.75em -0.75em 0 0 #fff, 0.75em -0.75em 0 0 #fff, -0.5em -0.5em 0 0 #fff, 0.5em -0.5em 0 0 #fff, -0.75em -0.25em 0 0 #fff, -0.5em -0.25em 0 0 #fff, 0.5em -0.25em 0 0 #fff, 0.75em -0.25em 0 0 #fff, -1em 0 0 0 #fff, -0.75em 0 0 0 #fff, 0.75em 0 0 0 #fff, 1em 0 0 0 #fff, -1em 0.25em 0 0 #fff, 1em 0.25em 0 0 #fff, -0.75em 0.75em 0 0 #fff, 0.75em 0.75em 0 0 #fff, 1.25em 0 0 0 #fff, 1.25em -0.25em 0 0 #fff, 1.25em -0.5em 0 0 #fff, -1.25em 0 0 0 #fff, -1.25em -0.25em 0 0 #fff, -1.25em -0.5em 0 0 #fff, -1em 1em 0 0 #fff, -1em 1em 0 0 #fff, 1em 1em 0 0 #fff, 1em 1em 0 0 #fff;
+  }
+}
+@keyframes animSpaceInvader {
+  50% {
+    box-shadow: 0 0 0 0.25em #fff, 0 0.25em 0 0.25em #fff, -0.625em 0.375em 0 0.125em #fff, 0.625em 0.375em 0 0.125em #fff, -0.75em -0.75em 0 0 #fff, 0.75em -0.75em 0 0 #fff, -0.5em -0.5em 0 0 #fff, 0.5em -0.5em 0 0 #fff, -0.75em -0.25em 0 0 #fff, -0.5em -0.25em 0 0 #fff, 0.5em -0.25em 0 0 #fff, 0.75em -0.25em 0 0 #fff, -1em 0 0 0 #fff, -0.75em 0 0 0 #fff, 0.75em 0 0 0 #fff, 1em 0 0 0 #fff, -1em 0.25em 0 0 #fff, 1em 0.25em 0 0 #fff, -0.75em 0.75em 0 0 #fff, 0.75em 0.75em 0 0 #fff, 1.25em 0 0 0 #fff, 1.25em -0.25em 0 0 #fff, 1.25em -0.5em 0 0 #fff, -1.25em 0 0 0 #fff, -1.25em -0.25em 0 0 #fff, -1.25em -0.5em 0 0 #fff, -1em 1em 0 0 #fff, -1em 1em 0 0 #fff, 1em 1em 0 0 #fff, 1em 1em 0 0 #fff;
+  }
+}
+
+</style>
+
+<script>
+      var frame = 2000,
+      screen = document.getElementById( 'screen' ),
+      items = screen.getElementsByClassName( 'item' ),
+      item = items[0],
+      screenWidth = screen.offsetWidth,
+      screenHeight = screen.offsetHeight,
+      itemWidth = item.offsetWidth,
+      itemHeight = item.offsetHeight,
+      timeEl = screen.getElementsByClassName('time')[0],
+      timeOutput = timeEl.querySelector('output'),
+      scoreEl = screen.getElementsByClassName('score')[0],
+      scoreOutput = scoreEl.querySelector('output'),
+      time = 20,
+      score = 0/10,
+      ready = 1;
+
+/*
+function addElement () {
+  screen.createElement('div');
+}
+*/
+
+function shootFunc() {
+  for(var i = 0; i < items.length; i++){
+    if (ready == 1){
+      items[i].onclick = function(){
+        score++;
+        this.style.display = 'none';
+        scoreOutput.innerHTML = score + '/10';
+      }
+    }
+  }
+}
+
+function timeFunc() {
+  setInterval( func, 1000 );
+  function func() {
+    if (time > 0) {
+      time--;
+      timeOutput.innerHTML = time + 's';
+    }
+    if (time == 0 && score != items.length) {
+      ready = 0;
+      scoreEl.innerHTML = 'Game Over!';
+      scoreEl.classList.add('gameover');
+    }
+  }
+}
+
+function positionsFunc() {
+  setInterval( func, frame );
+  function func(){
+    for(var i = 0; i < items.length; i++){
+      var item = items[i],
+          itemTop = Math.floor(Math.random() * (screenHeight - itemHeight), 0),
+          itemLeft = Math.floor(Math.random() * (screenWidth - itemWidth), 0);
+      item.style.top = itemTop + 'px';
+      item.style.left = itemLeft + 'px';
+    }
+  }
+}
+
+shootFunc();
+timeFunc();
+positionsFunc();
+</script>
